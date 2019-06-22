@@ -2,20 +2,34 @@ import React from 'react';
 import RegSeasOrPlayoffsIndicator from "../Components/RegSeasOrPlayoffsIndicator";
 import PageHeader from "../Components/PageHeader";
 import PlayerComparisonList from "../Components/PlayerComparisonList";
-import RegSeasButton from "../Components/RegSeasButton";
-import PlayoffButton from "../Components/PlayoffButton";
+import Grid from '@material-ui/core/Grid';
+import '../styles/App.css';
+import SeasonTypeButton from "../Components/SeasonTypeButton";
 
 const AssistAppContainer = () => {
   return (
     <React.Fragment>
-      <h1>
-        This is the AssistAppContainer
-      </h1>
-      <PageHeader />
-      <RegSeasOrPlayoffsIndicator />
+      <Grid container justify='space-between'>
+        <Grid item xs="4">
+          <PageHeader />
+        </Grid>
+        <Grid item xs="4">
+          <RegSeasOrPlayoffsIndicator />
+        </Grid>
+      </Grid>
       <PlayerComparisonList />
-      <RegSeasButton />
-      <PlayoffButton />
+      <Grid container justify='center'>
+        <Grid item xs="3">
+          <SeasonTypeButton
+            buttonText="Regular Season"
+          />
+        </Grid>
+        <Grid item xs="3">
+          <SeasonTypeButton
+            buttonText="Playoffs"
+          />
+        </Grid>
+      </Grid>
     </React.Fragment>
   )
 };

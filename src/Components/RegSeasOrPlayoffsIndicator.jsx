@@ -3,7 +3,9 @@ import React from 'react';
 const RegSeasOrPlayoffsIndicator = () => {
   return (
     <React.Fragment>
-      This is the RegSeasOrPlayoffsIndicator
+      <h2>
+        This is the RegSeasOrPlayoffsIndicator
+      </h2>
     </React.Fragment>
   )
 };

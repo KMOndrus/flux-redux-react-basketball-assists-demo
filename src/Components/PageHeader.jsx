@@ -3,7 +3,9 @@ import React from 'react';
 const PageHeader = () => {
   return (
     <React.Fragment>
-      This is the PageHeader
+      <h2 className="Page-Header">
+        Player Assists Per Game
+      </h2>
     </React.Fragment>
   )
 };
