@@ -10,21 +10,23 @@ const AssistAppContainer = () => {
   return (
     <React.Fragment>
       <Grid container justify='space-between'>
-        <Grid item xs="4">
+        <Grid item xs={4}>
           <PageHeader />
         </Grid>
-        <Grid item xs="4">
+        <Grid item xs={4}>
           <RegSeasOrPlayoffsIndicator />
         </Grid>
       </Grid>
-      <PlayerComparisonList />
       <Grid container justify='center'>
-        <Grid item xs="3">
+        <PlayerComparisonList />
+      </Grid>
+      <Grid container justify='center'>
+        <Grid item xs={4}>
           <SeasonTypeButton
             buttonText="Regular Season"
           />
         </Grid>
-        <Grid item xs="3">
+        <Grid item xs={4}>
           <SeasonTypeButton
             buttonText="Playoffs"
           />

@@ -1,14 +1,17 @@
 import React from 'react';
 import PlayerComparisonHeader from "./PlayerComparisonHeader";
 import PlayerComparisonRows from "./PlayerComparisonRows";
+import Paper from '@material-ui/core/Paper';
+import Table from '@material-ui/core/Table';
 
 const PlayerComparisonList = () => {
   return (
-    <React.Fragment>
-      This is the PlayerComparisonList
-      <PlayerComparisonHeader />
-      <PlayerComparisonRows />
-    </React.Fragment>
+    <Paper className="Table">
+      <Table>
+        <PlayerComparisonHeader />
+        <PlayerComparisonRows />
+      </Table>
+    </Paper>
   )
 };
 

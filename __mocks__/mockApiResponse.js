@@ -1,4 +1,4 @@
-export const players = {
+export const data = {
   payload: [
     {
       "player": "Lebron",
