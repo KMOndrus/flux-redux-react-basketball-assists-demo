@@ -6,18 +6,18 @@ import TableCell from '@material-ui/core/TableCell';
 const tempData = [
   {
     "rank": 1,
-    "player1": 100,
-    "player2": 101,
+    "player1": "100 ... 2018",
+    "player2": "101 ... 2017",
   },
   {
     "rank": 2,
-    "player1": 200,
-    "player2": 201,
+    "player1": "200 ... 2016",
+    "player2": "201 ... 2016",
   },
   {
     "rank": 3,
-    "player1": 300,
-    "player2": 301,
+    "player1": "300 ... 2015",
+    "player2": "301 ... 2018",
   },
 ];
 
