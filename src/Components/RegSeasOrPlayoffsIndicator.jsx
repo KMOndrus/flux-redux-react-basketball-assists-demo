@@ -1,10 +1,17 @@
 import React from 'react';
 
-const RegSeasOrPlayoffsIndicator = () => {
+const RegSeasOrPlayoffsIndicator = (props) => {
+  const display = () => {
+    if (props.dataIndicator === true) {
+      return ("Playoffs");
+    } else {
+      return ("Regular Season");
+    }
+  };
   return (
     <React.Fragment>
       <h2>
-        This is the RegSeasOrPlayoffsIndicator
+        {display()}
       </h2>
     </React.Fragment>
   )

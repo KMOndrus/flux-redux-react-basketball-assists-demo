@@ -25,7 +25,9 @@ const PlayerComparisonRows = () => {
   return (
     <TableBody>
       {tempData.map(row => (
-        <TableRow>
+        <TableRow
+          id={row.rank}
+        >
           <TableCell>
             {row.rank}
           </TableCell>

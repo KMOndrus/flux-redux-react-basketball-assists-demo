@@ -7,6 +7,7 @@ const SeasonTypeButton = (props) => {
       <Button
         variant="outlined"
         color="primary"
+        onClick={props.toggleDataIndicator}
       >
         {props.buttonText}
       </Button>

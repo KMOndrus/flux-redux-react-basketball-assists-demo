@@ -6,34 +6,59 @@ import Grid from '@material-ui/core/Grid';
 import '../styles/App.css';
 import SeasonTypeButton from "../Components/SeasonTypeButton";
 
-const AssistAppContainer = () => {
-  return (
-    <React.Fragment>
-      <Grid container justify='space-between'>
-        <Grid item xs={4}>
-          <PageHeader />
+class AssistAppContainer extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      dataIndicator: "Regular Season",
+    };
+
+    this.toggleDataIndicator = this.toggleDataIndicator.bind(this);
+  }
+
+  toggleDataIndicator = (event) => {
+
+    this.setState({
+      dataIndicator: !this.state.dataIndicator,
+    });
+  };
+
+  render(){
+    return (
+      <React.Fragment>
+        <Grid container justify='space-between'>
+          <Grid item xs={4}>
+            <PageHeader />
+          </Grid>
+          <Grid item xs={4}>
+            <RegSeasOrPlayoffsIndicator
+              dataIndicator={this.state.dataIndicator}
+            />
+          </Grid>
         </Grid>
-        <Grid item xs={4}>
-          <RegSeasOrPlayoffsIndicator />
+        <Grid container justify='center'>
+          <PlayerComparisonList />
         </Grid>
-      </Grid>
-      <Grid container justify='center'>
-        <PlayerComparisonList />
-      </Grid>
-      <Grid container justify='center'>
-        <Grid item xs={4}>
-          <SeasonTypeButton
-            buttonText="Regular Season"
-          />
+        <Grid container justify='center'>
+          <Grid item xs={4}>
+            <SeasonTypeButton
+              id="regSeason-button"
+              buttonText="Regular Season"
+              toggleDataIndicator={this.toggleDataIndicator}
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <SeasonTypeButton
+              id="playoffs-button"
+              buttonText="Playoffs"
+              toggleDataIndicator={this.toggleDataIndicator}
+            />
+          </Grid>
         </Grid>
-        <Grid item xs={4}>
-          <SeasonTypeButton
-            buttonText="Playoffs"
-          />
-        </Grid>
-      </Grid>
-    </React.Fragment>
-  )
+      </React.Fragment>
+    )
+  }
 };
 
 export default AssistAppContainer;
