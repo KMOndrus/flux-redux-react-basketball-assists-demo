@@ -17,8 +17,8 @@ class AssistAppContainer extends React.Component {
     this.toggleDataIndicator = this.toggleDataIndicator.bind(this);
   }
 
-  toggleDataIndicator = (event) => {
-
+  toggleDataIndicator = (e) => {
+    console.log(e.currentTarget.id);
     this.setState({
       dataIndicator: !this.state.dataIndicator,
     });
