@@ -7,7 +7,7 @@ const SeasonTypeButton = (props) => {
       <Button
         variant="outlined"
         color="primary"
-        onClick={props.toggleDataIndicator}
+        onClick={(e) => props.toggleDataIndicator(e, props.buttonText)}
       >
         {props.buttonText}
       </Button>

@@ -5,6 +5,8 @@ import PlayerComparisonList from "../Components/PlayerComparisonList";
 import Grid from '@material-ui/core/Grid';
 import '../styles/App.css';
 import SeasonTypeButton from "../Components/SeasonTypeButton";
+import { connect } from "react-redux";
+import ACTIONS from '../modules/action';
 
 class AssistAppContainer extends React.Component {
   constructor(props) {
@@ -12,16 +14,19 @@ class AssistAppContainer extends React.Component {
 
     this.state = {
       dataIndicator: "Regular Season",
+      data: {},
     };
 
     this.toggleDataIndicator = this.toggleDataIndicator.bind(this);
   }
 
-  toggleDataIndicator = (e) => {
-    console.log(e.currentTarget.id);
+  toggleDataIndicator = (e, seasonType) => {
     this.setState({
-      dataIndicator: !this.state.dataIndicator,
+      dataIndicator: seasonType,
     });
+    if (seasonType === "Regular Season"){
+      this.props.selectRegSeason();
+    }
   };
 
   render(){
@@ -61,4 +66,14 @@ class AssistAppContainer extends React.Component {
   }
 };
 
-export default AssistAppContainer;
+const mapStateToProps = state => ({
+  dataIndicator: state.dataIndicator,
+  data: state.data,
+});
+
+const mapDispatchToProps = dispatch => ({
+  selectRegSeason: situation => dispatch(ACTIONS.selectRegSeason(situation)),
+  selectPlayoffs: situation => dispatch(ACTIONS.selectPlayoffs(situation)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(AssistAppContainer);
